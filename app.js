@@ -1,6 +1,3 @@
-
-
-
 let ctx = ca.getContext("2d");
 let p1 = p2 = 80;
 let key = {};
@@ -25,12 +22,12 @@ function start(){
 
 
 function loop(){
-    if(key[38]){    //  38 Taste nach oben
+    if(key[38]){    //  Taste 38 nach oben
         p2 -= 5;
 
     }
 
-    if(key[40]){    // 40 Taste nach unten
+    if(key[40]){    // Taste 40 nach unten
         p2 += 5;
 
     }
