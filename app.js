@@ -22,24 +22,20 @@ function start(){
 
 
 function loop(){
-    if(key[38]){    //  Taste 38 nach oben
+    if(key[75]){    // K key (up) 
         p2 -= 5;
-
     }
 
-    if(key[40]){    // Taste 40 nach unten
+    if(key[76]){    // L key (down)
         p2 += 5;
-
     }
 
-    if(key[87]){    // w Taste nach oben
+    if(key[65]){    // A key (up)
         p1 -= 5;
-
     }
 
-    if(key[83]){    // s Taste nach unten
+    if(key[83]){    // S key (down)
         p1 += 5;
-
     }
 
     ball.x += ball.speedX;
@@ -47,12 +43,12 @@ function loop(){
 
     if(ball.x < 20 || ball.x > (ca.width - 30)){
         if(ball.y > p1 && ball.y < p1 + 80 && ball.speedX < 0){
-            ball.sppedX = -ball.speedX;
+            ball.speedX = -ball.speedX;
             ball.speedY = (ball.y - p1 - 40) * 0.1;
         }
 
         if(ball.y > p2 && ball.y < p2 + 80 && ball.speedX > 0){
-            ball.sppedX = -ball.speedX;
+            ball.speedX = -ball.speedX;
             ball.speedY = (ball.y - p2 -40) * 0.1;
         }
 
@@ -67,8 +63,6 @@ function loop(){
     if(ball.x < 0 || ball.x > (ca.width - 10)) {
         setTimeout(start, 2000);
     }
-
-
 }
 
 
@@ -78,9 +72,6 @@ function draw(){
     ctx.fillStyle = "white";
     requestAnimationFrame(draw);
     ctx.fillRect(10, p1, 10,80); 
-    
     ctx.fillRect(ca.width - 20, p2, 10,80);
-
     ctx.fillRect(ball.x, ball.y, 10, 10);
-
 }
